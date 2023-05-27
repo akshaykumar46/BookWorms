@@ -15,24 +15,30 @@ struct BookCard: View {
             
             ZStack(alignment: .bottom) {
                 
+                NavigationLink{
+                    ItemView(book: book)
+                }label: {
+                    
+                    
                     Image(book.image)
                         .resizable()
                         .frame(width: 180)
                         .scaledToFit()
                         .cornerRadius(10)
-                
-                VStack(alignment: .leading) {
-                    Text(book.name)
-                        .bold()
-                    Text("\(book.price) ₹")
-                        .frame(width:150,alignment: .trailing)
-                        
                 }
-                .padding()
-                .frame(width:180,alignment: .leading)
-                .background(.ultraThinMaterial)
-                .cornerRadius(20)
-                
+                    VStack(alignment: .leading) {
+                        Text(book.name)
+                            .bold()
+                        Text("\(book.price) ₹")
+                            .frame(width:150,alignment: .trailing)
+                        
+                    }
+                    .padding()
+                    .frame(width:180,alignment: .leading)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(20)
+                    
+                    
                 
                 
             }

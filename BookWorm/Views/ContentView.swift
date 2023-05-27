@@ -10,16 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var cartManager = CartManager()
     var body: some View {
-        let columns=[GridItem(.adaptive(minimum: 160),spacing: 20)]
+        let columns=[GridItem(.adaptive(minimum: 160),spacing: 30)]
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns,spacing: 20) {
                     ForEach(bookList,id: \.id){ book in
-                        
-                        BookCard(book: book)
-                            .environmentObject(cartManager)
-                            
-                        
+
+                            BookCard(book: book)
+                                .environmentObject(cartManager)
+    
                     }
                 }
                 .padding(20)
