@@ -18,6 +18,7 @@
 		D08DD8DC2A2160F300164202 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DD8DB2A2160F300164202 /* CartManager.swift */; };
 		D08DD8DE2A221E6D00164202 /* ItemInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DD8DD2A221E6D00164202 /* ItemInCart.swift */; };
 		D08DD8E02A2235D400164202 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DD8DF2A2235D400164202 /* ItemView.swift */; };
+		D08DD8E22A22A09500164202 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DD8E12A22A09500164202 /* PaymentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D08DD8DB2A2160F300164202 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		D08DD8DD2A221E6D00164202 /* ItemInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInCart.swift; sourceTree = "<group>"; };
 		D08DD8DF2A2235D400164202 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		D08DD8E12A22A09500164202 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				D08DD8D52A214E4700164202 /* ContentView.swift */,
 				D08DD8D92A215FFC00164202 /* CartView.swift */,
 				D08DD8DF2A2235D400164202 /* ItemView.swift */,
+				D08DD8E12A22A09500164202 /* PaymentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				D08DD8DA2A215FFC00164202 /* CartView.swift in Sources */,
 				D08DD8D62A214E4700164202 /* ContentView.swift in Sources */,
 				D08DD8DC2A2160F300164202 /* CartManager.swift in Sources */,
+				D08DD8E22A22A09500164202 /* PaymentView.swift in Sources */,
 				D08DD8DE2A221E6D00164202 /* ItemInCart.swift in Sources */,
 				D08DD8E02A2235D400164202 /* ItemView.swift in Sources */,
 				D08DD8C12A20FC0C00164202 /* BookWormApp.swift in Sources */,
@@ -247,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -301,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
