@@ -25,7 +25,11 @@ struct CartView: View {
                     Text("Total Cart")
                     Text("\(cartManager.totalPrice) ₹")
                 }
+                PaymentButton()
+                    .padding()
             }
+//            remember to move it above
+            
         }
         .navigationTitle(Text("My Cart"))
         .padding(.top)
