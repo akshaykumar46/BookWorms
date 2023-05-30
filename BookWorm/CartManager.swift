@@ -8,15 +8,43 @@
 import Foundation
 
 class CartManager:ObservableObject{
-    @Published private(set) var books:[Book]=[]
+    @Published private(set) var cartItems:[ItemInCart]=[]
     @Published private(set) var totalPrice:Int=0
+    @Published private(set) var totalItemsInCart=0
     
     func addToCart(book:Book){
-        books.append(book)
+        if cartItems.filter({ $0.book.id == book.id }).count != 0{
+            for index in cartItems.indices {
+                if cartItems[index].book.id == book.id {
+                    cartItems[index].increaseQuantityByOne()
+                }
+            }
+        }
+        else{
+            cartItems.append(ItemInCart(book: book, quantity: 1))
+        }
         totalPrice+=book.price
+        totalItemsInCart += 1
     }
     func removeFromCart(book:Book){
-        books=books.filter{ $0.id != book.id }
+        var isOnlyOneCopy=false
+        for index in cartItems.indices {
+            if cartItems[index].book.id == book.id {
+                
+                if cartItems[index].quantity > 1{
+                    cartItems[index].decreaseQuantityByOne()
+                    
+                }
+                else{
+                    isOnlyOneCopy=true
+                }
+            }
+            
+        }
+        if isOnlyOneCopy{
+            cartItems.removeAll { $0.book.id == book.id }
+        }
         totalPrice-=book.price
+        totalItemsInCart -= 1
     }
 }

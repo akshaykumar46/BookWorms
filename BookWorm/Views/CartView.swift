@@ -11,13 +11,13 @@ struct CartView: View {
     @EnvironmentObject var cartManager:CartManager
     var body: some View {
         ScrollView{
-            if cartManager.books.count == 0 {
+            if cartManager.cartItems.count == 0 {
                 Text("your cart is empty!!!")
             }
             else {
                 ScrollView {
-                    ForEach(cartManager.books,id:\.id){ book in
-                        ItemInCart(book: book)
+                    ForEach(cartManager.cartItems,id:\.id){ item in
+                        ItemRow(item: item)
                     }
                 }
                 Spacer()

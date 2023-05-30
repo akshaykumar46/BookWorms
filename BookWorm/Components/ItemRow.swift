@@ -1,5 +1,5 @@
 //
-//  ItemInCart.swift
+//  ItemRow.swift
 //  BookWorm
 //
 //  Created by AKSHAY KUMAR on 27/05/23.
@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct ItemInCart: View {
+struct ItemRow: View {
     @EnvironmentObject var cartManager:CartManager
-    var book:Book
+    var item:ItemInCart
     var body: some View {
         HStack(spacing: 20) {
-            Image(book.image)
+            Image(item.book.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
                 .cornerRadius(10)
                 
             VStack(alignment: .leading,spacing: 10) {
-                Text(book.name)
+                Text(item.book.name)
                     .bold()
                 HStack {
-                    Text("\(book.price) ₹")
-                    Text("x\(book.quantity)")
+                    Text("\(item.book.price) ₹")
+                    Text("x\(item.quantity)")
                 }
             }
             Spacer()
@@ -31,7 +31,7 @@ struct ItemInCart: View {
                 .foregroundColor(.black)
                 .onTapGesture {
                     
-                    cartManager.removeFromCart(book: book)
+                    cartManager.removeFromCart(book: item.book)
                 }
                 
             
@@ -43,7 +43,7 @@ struct ItemInCart: View {
 
 struct ItemInCart_Previews: PreviewProvider {
     static var previews: some View {
-        ItemInCart(book: bookList[0])
+        ItemRow(item: ItemInCart(book: bookList[0], quantity: 1))
             .environmentObject(CartManager())
     }
 }
