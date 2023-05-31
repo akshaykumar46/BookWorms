@@ -28,7 +28,6 @@ struct CartView: View {
                 PaymentButton()
                     .padding()
             }
-//            remember to move it above
             
         }
         .navigationTitle(Text("My Cart"))

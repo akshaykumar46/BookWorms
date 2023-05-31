@@ -21,19 +21,25 @@ struct ItemRow: View {
             VStack(alignment: .leading,spacing: 10) {
                 Text(item.book.name)
                     .bold()
-                HStack {
-                    Text("\(item.book.price) ₹")
-                    Text("x\(item.quantity)")
-                }
+                    Text("\(item.book.price*item.quantity) ₹")
+
             }
             Spacer()
-            Image(systemName: "trash")
-                .foregroundColor(.black)
-                .onTapGesture {
-                    
-                    cartManager.removeFromCart(book: item.book)
-                }
-                
+            HStack {
+                Image(systemName: "minus.circle")
+                    .foregroundColor(.black)
+                    .onTapGesture {
+                        
+                        cartManager.removeFromCart(book: item.book)
+                    }
+                Text("x\(item.quantity)")
+                Image(systemName: "plus.circle")
+                    .foregroundColor(.black)
+                    .onTapGesture {
+                        
+                        cartManager.addToCart(book: item.book)
+                    }
+            }
             
         }
         .padding(.horizontal)

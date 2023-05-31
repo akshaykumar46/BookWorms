@@ -9,19 +9,21 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var cartManager = CartManager()
+//    @State var tabSelection: Tabs = .tab1
     var body: some View {
-        TabView{
-            ContentView()
-                .environmentObject(cartManager)
-                .tabItem{
-                    Label("home", systemImage: "house")
-                }
-            ProfileView(customer: customer1)
-                .tabItem{
-                    Label("", systemImage: "person.crop.circle")
-                        .foregroundColor(.red)
-                }
-        }
+            TabView {
+                ContentView()
+                    .environmentObject(cartManager)
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                
+                ProfileView(customer: customer1)
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
+                    }
+                
+            }
     }
 }
 
