@@ -15,14 +15,19 @@ struct PaymentButton: View {
             Button{
                 razorpayManager.makePayment(amount: 10000,name: "ExampleApp",description: "Payment Description",email: "CUSTOMER_EMAIL_ADDRESS", contact: "CUSTOMER_PHONE_NUMBER")
             } label: {
-                    HStack(spacing: 20){
-                        Text("Make Payment")
-                        Image(systemName: "paperplane")
+                    HStack{
+                        Text("Pay with")
+                        Image("razorpayLogo")
+                            .resizable()
+                            .frame(width: 30,height: 30)
+                            .clipShape(Circle())
+//                            .scaledToFit()
+                        Text("RazorPay")
                     }
-                    .frame(width: 200,height: 40)
-                    .background(Color.blue)
+                    .frame(width: 250,height: 40)
+                    .background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(20)
+                    .cornerRadius(5)
                    }
              }
     }
