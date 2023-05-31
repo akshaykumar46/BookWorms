@@ -25,7 +25,10 @@ struct CartView: View {
                     Text("Total Cart")
                     Text("\(cartManager.totalPrice) ₹")
                 }
-                PaymentButton()
+                RazorPayPaymentButton()
+                    .padding()
+                Text("Or")
+                ApplePayButton(action: {})
                     .padding()
             }
             

@@ -8,7 +8,7 @@
 import Foundation
 import Razorpay
 
-class PaymentManager: ObservableObject, RazorpayPaymentCompletionProtocol {
+class RazorPayPaymentManager: ObservableObject, RazorpayPaymentCompletionProtocol {
     private var razorpay: RazorpayCheckout?
     
     init() {
@@ -41,6 +41,6 @@ class PaymentManager: ObservableObject, RazorpayPaymentCompletionProtocol {
     }
     
     func onPaymentError(_ code: Int32, description: String) {
-        // Payment error handling
+        print("Error while making payment!!")
     }
 }
